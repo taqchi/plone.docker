@@ -1,0 +1,4 @@
+Please consider [our contributor's guidelines](http://docs.plone.org/about/contributing.html/ "Contributing to Plone Docs") first.
+
+Thank you !
+
