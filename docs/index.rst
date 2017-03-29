@@ -5,6 +5,7 @@ Plone On Docker
 .. toctree::
    :hidden:
 
+   intoduction
    usage/index
    images/index
    data/index

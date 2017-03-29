@@ -5,8 +5,6 @@ Images
 .. toctree::
    :hidden:
 
-   alpine
-   debian
    custom
 
 Flavours
@@ -15,7 +13,7 @@ Flavours
 The community provides two different base images.
 One `Debian <https://debian.org>`_ based and one on `Alpine Linux <https://alpinelinux.org/>`_.
 
-Differnces 
+Differnces
 ==========
 
 `Debian <https://debian.org>`_ is more known, uses ``apt`` as package manager and standard compilers.

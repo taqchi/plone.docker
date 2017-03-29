@@ -2,46 +2,57 @@
 Custom Images
 =============
 
-6. Extending this image
------------------------
-In order to run Plone with your custom theme or Plone Add-ons, you'll have to
-build another image based on this one. For this, you'll need to create two files,
-`site.cfg` which is a `zc.buildout <https://pypi.python.org/pypi/zc.buildout/2.5.0>`_
-configuration file, and `Dockerfile <https://docs.docker.com/engine/reference/builder/>`_
-which is the Docker recipe for your image
+Extending A Base Image
+======================
 
-site.cfg
-~~~~~~~~
-::
+To run Plone with your custom theme or Plone add-ons, you'll have to build another image based on this one.
 
-  [buildout]
-  extends = buildout.cfg
-  eggs +=
-    plone.awsome.addon
-    plone.other.addon
+For this, you'll need to create two files:
 
-  [versions]
-  plone.awsome.addon = 1.0
-  plone.other.addon = 24.13
+- `site.cfg` which is a `zc.buildout <https://pypi.python.org/pypi/zc.buildout/2.5.0>` configuration file
+- `Dockerfile <https://docs.docker.com/engine/reference/builder/>`_ which is the Docker recipe for your image
 
-  # Required by:
-  # plone.other.addon = 24.13
-  plone.api = 1.5.1
+
+Configuration File
+------------------
+
+``site.cfg``
+
+.. code-block:: shell
+
+   [buildout]
+   extends = buildout.cfg
+   eggs +=
+     plone.awsome.addon
+     plone.other.addon
+
+   [versions]
+   plone.awsome.addon = 1.0
+   plone.other.addon = 24.13
+
+   # Required by:
+   # plone.other.addon = 24.13
+   plone.api = 1.5.1
 
 
 Dockerfile
-~~~~~~~~~~
-::
+----------
 
-  FROM plone:5
+.. code-block:: shell
 
-  COPY site.cfg /plone/instance/
-  RUN bin/buildout -c site.cfg
+   FROM plone:5
 
-Build your custom Plone image::
+   COPY site.cfg /plone/instance/
+   RUN bin/buildout -c site.cfg
 
-  $ docker build -t custom-plone-image .
+Build your custom Plone image
 
-Run it::
+.. code-block:: shell
 
-  $ docker run -p 8080:8080 custom-plone-image
+   docker build -t custom-plone-image .
+
+Run it
+
+.. code-block:: shell
+
+   docker run -p 8080:8080 custom-plone-image
