@@ -2,7 +2,7 @@
 Add-ons
 =======
 
-You can test new or existing Plone add-ons by passing them via the `PLONE_ADDONS` environment variable.
+You can test new or existing Plone add-ons by passing them via the ``PLONE_ADDONS`` environment variable.
 
 The following examples adds the `eea.facetednavigation <https://github.com/eea/eea.facetednavigation>`_.
 
