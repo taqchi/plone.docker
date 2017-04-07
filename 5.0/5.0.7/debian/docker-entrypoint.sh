@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+mkdir -p /plone /data/filestorage /data/blobstorage /data/instance /data/log 
+
 COMMANDS="debug help logtail show stop adduser fg kill quit run wait console foreground logreopen reload shell status"
 START="start restart zeoserver"
 CMD="bin/instance"
