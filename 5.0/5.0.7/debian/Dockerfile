@@ -2,7 +2,7 @@ FROM python:2.7-slim
 MAINTAINER "Plone Community" http://community.plone.org
 
 RUN useradd --system -U -u 500 plone \
- && mkdir -p /plone /data/filestorage /data/blobstorage \
+ && mkdir -p mkdir -p /data/filestorage /data/blobstorage /data/instance /data/log \
  && chown -R plone:plone /plone /data
 
 ENV PLONE_MAJOR=5.0
